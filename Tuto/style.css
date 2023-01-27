@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400display=swap');
+
+:root{
+    --violet: #d33bfd;
+}
+
+body{
+    margin: 0; /*retirer les marges extérieures*/
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+header{
+    background: linear-gradient(#13181d, #20212e, #341b47);
+}
+
+header nav{
+    padding: 30px 5% 0 5%;
+    display: flex;
+    flex-wrap: wrap; /*renvoie les éléments à la ligne quand il n'y a plus de place (réduction de fenêtre)*/
+    justify-content: space-between; /*mettre un grand espace entre le 1er élément (h1) et le deuxième (div)*/
+    align-items: center; /*place les 2 éléments (h1 & div) au milieu du conteneur et les aligne*/
+}
+
+header nav h1{
+    margin: 0; /*effacer toute les marges autour de l'élément, le texte occupe la totalité de l'élément h1*/
+    text-transform: uppercase;
+    color: var(--violet);
+}
+
+header nav .right{
+    display: flex;
+    align-items: center; /*centrer les éléments (p) dans le conteneur*/
+}
+
+header nav .right p{
+    margin: 0 15px 0 0; /*espacer chaque élément (p) de 15px à droite*/
+    color: #ccc;
+}
+
+header nav .right p:hover{
+    color: white;
+    cursor: pointer;
+}
+
+header nav .right button{
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: inherit; /*inherit permet d'appliquer la couleur de l'élément parent, soit du conteneur header*/
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s; /*applique une transition quand le curseur pointe sur le bouton*/
+}
+
+header nav .right button:hover{
+    color: inherit;
+    background-color: var(--violet);
+}
+
+.presentation{
+    padding: 30px 5%;
+    margin-top: 5%;
+    display: flex; /*permet d'aligner les éléments div product-presentation et div image*/
+    align-items: center; /*aligne les éléments à la verticale*/
+    justify-content: space-between;
+}
+
+.presentation .product-presentation{
+    width: 100%; /*occupe 100% de la place qu'il peut occuper au niveau de son emplacement dans le conteneur*/
+    flex-shrink: 3; /*défini comment l'item va rétrécir en fonction de l'espace disponible dans le conteneur*/
+}
+
+.presentation .product-presentation h1{
+    margin: 0;
+    font-size: 4vw; /*4% de view width, la largeur que l'utilisateur voit, h1 prend donc 4% de cette view width*/
+    width: 80%; /*prend 80% de la largeur de l'espace qui le contient, la div product-presentation*/
+}
+
+.presentation .product-presentation p{
+    font-weight: 300;
+    color: #e9e9e9;
+}
+
+.presentation .product-presentation button{
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none; /*annule l'apparition de la bordure quand on clique sur un bouton*/
+    cursor: pointer;
+}
+
+.presentation .image-presentation img{
+    width: 100%;
+}
+
+.first .product-presentation button{
+    background-color: var(--violet);
+    border: 1px solid var(--violet);
+    color: white;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.first .product-presentation button:hover{
+    background-color: inherit;    
+    color: var(--violet);
+}
+
+.first .product-presentation .small-images{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.first .product-presentation .small-images .small{
+    padding: 20px;
+    background-color: #33314d;
+    margin: 0 15px 15px 0;
+    border-radius: 20px;
+    transition: filter 0.5s;    
+}
+
+.first .product-presentation .small-images .small:hover{
+    filter: brightness(50%); /*baisse la luminosité quand le curseur pointe sur les images*/
+}
+
+.first .product-presentation .small-images .small img{
+    width: 120px;
+}
+
+@media screen and (max-width: 640px) { /*ne s'exécutera que lorsque la taille de l'écran sera inférieure ou égal à 640px / format mobile*/
+    header nav .right p{
+        display: none; /*en format mobile, les onglets n'apparaissent pas*/
+    }
+
+    .presentation .product-presentation h1{
+        font-size: 2em; /*2em: 2x sa taille initiale ; permet d'aggrandir la taille en format mobile*/
+    }
+
+    .presentation .image-presentation{
+        display: none; /*en format mobile, l'image n'apparait pas*/
+    }
+
+    ;.first .product-presentation .small-images .small img{
+        width: 90px; /*en format mobile, la taille des image est réduite à 90px*/
+    }
+}
+
+
