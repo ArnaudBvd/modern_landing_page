@@ -157,6 +157,30 @@ header nav .right button:hover{
     color: white;
 }
 
+/*Mise en forme du footer*/
+
+footer{
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer h3{
+    color: var(--violet);
+}
+
+footer p{
+    cursor: pointer;
+    color: #ccc;
+}
+
+footer p:hover{
+    color: white;
+}
+
 /*Media queries pour le responsive*/
 
 @media screen and (max-width: 640px) { /*ne s'exécutera que lorsque la taille de l'écran sera inférieure ou égal à 640px / format mobile*/
@@ -174,6 +198,14 @@ header nav .right button:hover{
 
     ;.first .product-presentation .small-images .small img{
         width: 90px; /*en format mobile, la taille des image est réduite à 90px*/
+    }
+
+    footer{
+        justify-content: center;
+    }
+
+    footer .column{
+        width: 80%; /*réduit la taille des div column en format mobile*/
     }
 }
 
