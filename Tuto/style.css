@@ -10,6 +10,8 @@ body{
     color: white;
 }
 
+/*Mise en forme de la première section / Header & Barre de navigation*/
+
 header{
     background: linear-gradient(#13181d, #20212e, #341b47);
 }
@@ -131,6 +133,31 @@ header nav .right button:hover{
 .first .product-presentation .small-images .small img{
     width: 120px;
 }
+
+/*Mise en forme de la seconde section*/
+
+.second{
+    margin: 0;
+    background-color: #13181d;
+}
+
+.second .product-presentation .new{
+    color: var(--violet);
+}
+
+.second .product-presentation button{
+    background-color: inherit;
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.second .product-presentation button:hover{
+    background-color: var(--violet);
+    color: white;
+}
+
+/*Media queries pour le responsive*/
 
 @media screen and (max-width: 640px) { /*ne s'exécutera que lorsque la taille de l'écran sera inférieure ou égal à 640px / format mobile*/
     header nav .right p{
